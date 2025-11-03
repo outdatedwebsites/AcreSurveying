@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acre Surveying Co.</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    /* Header Section */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #004d80;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+	  font-size: 1.5rem; /* Ensures the text size is clear and professional */
+    }
+
+    header h1 {
+      font-size: 2.0rem;
+    }
+	
+	.header-contact {
+		text-align: right;
+		font-size: 1.5rem;
+		margin-right: 20px;
+}
+
+	.header-contact p {
+		margin: 0;
+}
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      cursor: pointer;
+    }
+
+    nav ul li:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-image: url('/Hero01.jpg');
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  background-position: center center;
+	  background-attachment: scroll;
+      height: 100vh;
+	  width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 40px;
+      background-color: #f4f4f9;
+      text-align: center;
+	  font-size: 1.5rem; /* Ensures the text size is clear and professional */  
+    }
+	
+	.services-grid-wrapper {
+	  width: 100%;
+	  display: flex;
+	  justify-content: center;
+	}
+
+    .services h2 {
+      margin-bottom: 20px;
+    }
+	
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(300px, 1fr));
+      gap: 20px;
+	  max-width: 1200px;
+	  margin-left: auto;
+	  margin-right: auto;
+	  float: none;
+	  padding: 0 20px;
+    }
+	
+	
+
+    .services-item {
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .services-item h3 {
+      margin-bottom: 10px;
+    }
+
+    /* About Us Section */
+    .about {
+      display: flex;
+      align-items: center;
+      padding: 40px;
+      background-color: #e6f7ff;
+    }
+
+    .about img {
+      flex: 1;
+      max-width: 50%;
+      border-radius: 10px;
+    }
+
+    .about-content {
+		flex: 1;
+		padding: 20px 40px;
+		text-align: justify; /* Ensures text spreads evenly across the width */
+		line-height: 1.8; /* Improves readability by increasing line spacing */
+		font-size: 1.5rem; /* Ensures the text size is clear and professional */
+    }
+
+    .about-content h2 {
+      margin-bottom: 20px;
+    }
+
+    /* Google Map Section */
+    .map {
+      padding: 40px;
+      background-color: #f4f4f9;
+      text-align: center;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+
+    .map h2 {
+      margin-bottom: 20px;
+	  font-size: 1.8rem; /* Ensures the text size is clear and professional */	  
+    }
+
+    /* Contact Us Section */
+    .contact {
+      padding: 40px;
+      background-color: #fff;
+      text-align: center;
+	  font-size: 1.8rem; /* Ensures the text size is clear and professional */
+    }
+
+    .contact h2 {
+      margin-bottom: 20px;
+	  font-size: 1.8rem; /* Ensures the text size is clear and professional */	  
+    }
+
+    .contact form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+	  font-size: 1.5rem; /* Ensures the text size is clear and professional */	  
+    }
+
+    .contact form input,
+    .contact form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contact form button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #004d80;
+      color: #fff;
+      cursor: pointer;
+	  font-size: 1.5rem; /* Ensures the text size is clear and professional */	  
+    }
+
+    .contact form button:hover {
+      background-color: #003354;
+    }
+
+    /* Footer Section */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #004d80;
+      color: #fff;
+	  font-size: 1.5rem; /* Ensures the text size is clear and professional */	  
+    }
+
+    footer p {
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      color: #ffcc00;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Acre Surveying Co.</h1>
+	<div class="header-contact">
+		<p>Springfield, NJ area</p>
+		<p>(732) 616-1422</p>
+	</div>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#map">Location</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="content">
+      <h2>Precision and Accuracy</h2>
+      <p>Your Trusted Partner in Land Surveying</p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+	<div class="services-grid-wrapper">
+	<div class="services-grid">
+      <div class="services-item">
+        <h3>Boundary Surveys</h3>
+        <p>Accurate property boundary determination for legal and construction purposes.</p>
+      </div>
+      <div class="services-item">
+        <h3>Topographic Surveys</h3>
+        <p>Detailed mapping of land features for planning and design.</p>
+      </div>
+      <div class="services-item">
+        <h3>Construction Staking</h3>
+        <p>Precise staking to ensure construction projects meet design specifications.</p>
+      </div>
+      <div class="services-item">
+        <h3>Subdivision Planning</h3>
+        <p>Professional subdivision design and platting services.</p>
+      </div>
+    </div>
+	</div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about">
+    <img src="/AboutUs01.jpg" alt="About Acre Surveying Co.">
+    <div class="about-content">
+      <h2>About Us</h2>
+      <p>With years of experience, Acre Surveying Co. specializes in providing professional land surveying services tailored to your needs. Our mission is to deliver precise and reliable solutions for property owners, developers, and contractors.</p>
+    </div>
+  </section>
+
+  <!-- Google Map Section -->
+  <section id="map" class="map">
+    <h2>Our Location</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509205!2d-122.41941558468168!3d37.77492927975948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085818a0fcd7df3%3A0x4a2f7e40b9e8c3e9!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1696963940167!5m2!1sen!2sus"></iframe>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; <span id="year"></span> Acre Surveying Co. All Rights Reserved.</p>
+    <p>Follow us on <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a></p>
+  </footer>
+
+  <script>
+    // Update the year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
